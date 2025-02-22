@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: cricket-video-analysis
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn -b 0.0.0.0:10000 app:app
+    envVars:
+      - key: https://sgwbrhwnulxzukzoaeqo.supabase.co
+        sync: false
+      - key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNnd2JyaHdudWx4enVrem9hZXFvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDAwNzE5MTIsImV4cCI6MjA1NTY0NzkxMn0.A82iCDeP41Ie2-GoDOk8OTpxcqaBIsDMHSPJG5MFDs4
+        sync: false
